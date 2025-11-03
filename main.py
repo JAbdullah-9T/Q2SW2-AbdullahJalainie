@@ -2,11 +2,11 @@ from pyscript import document
 
 def calculate_gwa():
     # Get input values
-    name = Element("name").value
-    student_id = Element("id").value
-    tle = float(Element("tle").value)
-    pe = float(Element("pe").value)
-    music = float(Element("music").value)
+    name = document.getElementById("name").value
+    student_id = document.getElementById("id").value
+    tle = float(document.getElementById("tle").value)
+    pe = float(document.getElementById("pe").value)
+    music = float(document.getElementById("music").value)
 
     # Compute GWA
     gwa = (tle + pe + music) / 3
@@ -17,4 +17,4 @@ def calculate_gwa():
         <p>Student ID: <strong>{student_id}</strong></p>
         <p>General Weighted Average: <strong>{gwa:.2f}</strong></p>
     """
-    Element("result").write(result_html)
+    document.getElementById("result").write(result_html)
